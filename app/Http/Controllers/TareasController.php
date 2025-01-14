@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 class TareasController extends Controller
 {
     public function index() {
-        return view('mistareas');
+        $mensaje = 'Lectura de Mensajes';
+        $mensajes = ['mensaje1', 'mensaje2', 'mensaje3'];
+        return view('mistareas', ['aviso' => $mensaje, 'mensajes' => $mensajes] );
     }
 }

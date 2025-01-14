@@ -4,6 +4,9 @@
     
 </head>
 <body>
-    Hello WOrls
+    <h1>{{ $aviso }}</h1>
+    @foreach ($mensajes as $mensaje)
+        <li>{{ $mensaje }}</li>
+    @endforeach
 </body>
 </html>
