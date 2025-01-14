@@ -21,4 +21,4 @@ Route::get('/', function () {
 });
 Route::get('/mipagina', [MiController::class,'inicio']);
 
-Route::get('/tareas', [TareasController::class,'tareas']);
+Route::get('/tareas', [TareasController::class,'index']);
