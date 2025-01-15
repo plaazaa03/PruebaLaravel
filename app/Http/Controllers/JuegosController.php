@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Juego;
 
 class JuegosController extends Controller
 {
@@ -11,7 +12,9 @@ class JuegosController extends Controller
      */
     public function index()
     {
-        //
+        // recupera todos los juegos sin escribir query
+        $juegos = Juego::all();
+        return view('juegos');
     }
 
     /**

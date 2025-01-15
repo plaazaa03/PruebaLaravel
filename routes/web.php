@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\MiController;
 use \App\Http\Controllers\TareasController;
+use \App\Http\Controllers\JuegosController;
 
 
 /*
@@ -22,3 +23,9 @@ Route::get('/', function () {
 Route::get('/mipagina', [MiController::class,'inicio']);
 
 Route::get('/tareas', [TareasController::class,'index']);
+
+Route::get('/juegos', [JuegosController::class,'index']);
+
+//esto realiza el crud automaticamente
+//Route::resource('/juegos', [JuegosController::class]);
+
