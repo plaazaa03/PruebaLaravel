@@ -12,9 +12,8 @@ class JuegosController extends Controller
      */
     public function index()
     {
-        // recupera todos los juegos sin escribir query
         $juegos = Juego::all();
-        return view('juegos');
+        return view('juegos', ['juegos' => $juegos]);
     }
 
     /**

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('juegos', function (Blueprint $table) {
             $table->id();
-            /*Crear Columnas con tipo y nombre*/
             $table->string('nombre');
             $table->string('descripcion');
             $table->timestamps();
