@@ -11,5 +11,6 @@ class TareasController extends Controller
         $mensajes = ['mensaje1', 'mensaje2', 'mensaje3'];
         return view('mistareas', ['aviso' => $mensaje, 'mensajes' => $mensajes] );
         //return view('mistareas', compact('aviso', 'mensajes')); (Es lo mismo que lo de arriba)
+        
     }
 }
