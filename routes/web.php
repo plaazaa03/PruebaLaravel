@@ -5,7 +5,6 @@ use \App\Http\Controllers\MiController;
 use \App\Http\Controllers\TareasController;
 use \App\Http\Controllers\JuegosController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +23,10 @@ Route::get('/mipagina', [MiController::class,'inicio']);
 
 Route::get('/tareas', [TareasController::class,'index']);
 
-Route::get('/juegos', [JuegosController::class,'index']);
+Route::get('/juegos', [JuegosController::class,'index'])->name('listaJuegos');
+
+// añadimos un parametro
+Route::get('/juegos/{id}', [JuegosController::class,'show'])->name('mostrarJuego');
 
 //esto realiza el crud automaticamente
 //Route::resource('/juegos', [JuegosController::class]);

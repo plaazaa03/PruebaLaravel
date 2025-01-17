@@ -10,9 +10,16 @@ class JuegosController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $juegos = Juego::all();
+        // crear query
+        $query = Juego::query();
+        $request->has('nombre');
+        if($request->has('nombre')) {
+            $query->where('nombre', 'like', '%'.$request->get('nombre').'%');
+            
+        }
+        $juegos = $query->get();
         return view('juegos', ['juegos' => $juegos]);
     }
 
@@ -35,9 +42,11 @@ class JuegosController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show(string $id)
     {
-        //
+        $juego = Juego::findOrFail($id);
+        return view('mostrarJuego', compact('juego'));
     }
 
     /**
