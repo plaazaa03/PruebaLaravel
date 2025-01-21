@@ -61,7 +61,8 @@ class JuegosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $juego = Juego::findOrFail($id);
+        return view('editarjuego', compact('juego'));
     }
 
     /**
@@ -69,7 +70,12 @@ class JuegosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $juego = Juego::findOrFail($id);
+        $request->validate([
+            'nombre' => 'string|required',
+            'descripcion' => 'string|required'
+        ]);
+        $juego->update($request->all());
     }
 
     /**

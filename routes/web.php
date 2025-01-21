@@ -33,6 +33,10 @@ Route::get('/crearJuego', [JuegosController::class,'create'])->name('crearJuego'
 
 Route::post('/juegos', [JuegosController::class,'store'])->name('guardarJuego');
 
+// ruta para editar juego
+Route::get('/editarJuego/{id}', [JuegosController::class, 'edit']);
+Route::get('/editarJuego/{id}', [JuegosController::class, 'update'])->name('actualizarJuego');
+    
 
 
 //esto realiza el crud automaticamente
