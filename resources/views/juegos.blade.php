@@ -12,8 +12,9 @@
         <input type="submit" value="Filtrar">
     </form>
     @foreach ($juegos as $juego)
-        <li><a href="{{ route('mostrarJuego', $juego->id) }}">{{ $juego->nombre }} - {{ $juego->descripcion }} </li>
+    <li><a href="{{ route('mostrarJuego', $juego->id) }}">{{ $juego->nombre }} - {{ $juego->descripcion }} </li>
     @endforeach
+    <a href="{{ route(name: 'crearJuego') }}">Crear juego</a>
 </body>
 
 </html>

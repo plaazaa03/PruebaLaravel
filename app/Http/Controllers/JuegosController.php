@@ -28,7 +28,7 @@ class JuegosController extends Controller
      */
     public function create()
     {
-        //
+        return view('crearJuego');
     }
 
     /**
@@ -36,7 +36,14 @@ class JuegosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // recupera todo los que a llegado con post y get
+        $request->validate([
+            'nombre' => 'string|required',
+            'descripcion' => 'string|required'
+        ]);
+        Juego::create($request->all());
+        // redirecciona al index
+        return redirect()->route('listaJuegos')->with('success', 'Juego creado');
     }
 
     /**

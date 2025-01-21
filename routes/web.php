@@ -28,6 +28,13 @@ Route::get('/juegos', [JuegosController::class,'index'])->name('listaJuegos');
 // añadimos un parametro
 Route::get('/juegos/{id}', [JuegosController::class,'show'])->name('mostrarJuego');
 
+// ruta para crearJuegos
+Route::get('/crearJuego', [JuegosController::class,'create'])->name('crearJuego');
+
+Route::post('/juegos', [JuegosController::class,'store'])->name('guardarJuego');
+
+
+
 //esto realiza el crud automaticamente
 //Route::resource('/juegos', [JuegosController::class]);
 
